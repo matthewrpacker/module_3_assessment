@@ -7,8 +7,9 @@ class StoreService
     parsed_response = JSON.parse(@response.body)
     parsed_response['stores']
   end
-  #
-  # def stores
-  #   @parsed_response['stores']
-  # end
+
+  def store_total
+    parsed_response = JSON.parse(@response.body)
+    parsed_response['total']    
+  end
 end

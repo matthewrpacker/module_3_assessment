@@ -2,9 +2,8 @@ require 'rails_helper'
 
 describe 'User can search for stores' do
   scenario 'They use zip code to search' do
-    # As a user
     visit '/'
-    # When I visit "/"
+
     fill_in "Store Zip", with: '80202'
     click_on 'Search'
 
