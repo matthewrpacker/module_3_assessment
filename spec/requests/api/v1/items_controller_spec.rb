@@ -46,9 +46,17 @@ describe "Items" do
   end
 
   it 'creates an item with post verb' do
-    post '/api/v1/items'
-    # When I send a POST request to `/api/v1/items` with a name, description, and image_url
-    # I receive a 201 JSON  response if the record is successfully created
-    # And I receive a JSON response containing the id, name, description, and image_url but not the created_at or updated_at
+    post '/api/v1/items?name=golfball&description=used_for_golf&image_url=http://robohash.org/5.png?set=set2&bgset=bg1&size=200x200'
+
+    expect(response.status).to eq(201)
+
+    item = JSON.parse(response.body)
+
+    expect(item['id']).to eq(3)
+    expect(item['name']).to eq("golfball")
+    expect(item['description']).to eq("used for golf")
+    expect(item['image_url']).to eq("http://robohash.org/5.png?set=set2&bgset=bg1&size=200x200")
+    expect(item['created_at']).to eq(nil)
+    expect(item['updated_at']).to eq(nil)
   end
 end

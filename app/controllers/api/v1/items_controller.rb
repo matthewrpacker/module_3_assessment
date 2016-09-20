@@ -12,4 +12,13 @@ class Api::V1::ItemsController < ApplicationController
   def destroy
     respond_with Item.find(params[:id]).delete
   end
+
+  def create
+    Item.create(
+      name: params(:name),
+      description: params(:description),
+      image_url: params(:image_url)
+    )
+    respond_with Item.last
+  end
 end
