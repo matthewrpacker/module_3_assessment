@@ -1,14 +1,9 @@
 class Store
-  attr_reader :count, :name, :city, :distance, :phone, :type
+  attr_reader :stores_summary
 
   def initialize(store_attributes)
     byebug
-    @count = store_attributes['total']
-    @name = store_attributes['longName']
-    @city = store_attributes['city']
-    @distance = store_attributes['distance']
-    @phone = store_attributes['phone']
-    @type = store_attributes['storeType']
+    @stores_summary = store_attributes
   end
 
   def self.service
