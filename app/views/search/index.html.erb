@@ -1,3 +1,10 @@
+<h1> <%= "#{@parsed_response['total']} Total Stores" %>  </h1>
 <% @stores.each do |store| %>
-<%= store[''] %>
+<ul>
+  <li><%= store['longName'] %></li>
+  <li><%= store['city'] %></li>
+  <li><%= store['distance'] %></li>
+  <li><%= store['phone'] %></li>
+  <li><%= store['storeType'] %></li>
+</ul><br>
 <% end %>
