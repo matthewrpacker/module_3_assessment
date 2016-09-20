@@ -44,4 +44,11 @@ describe "Items" do
 
     expect(response.status).to eq(204)
   end
+
+  it 'creates an item with post verb' do
+    post '/api/v1/items'
+    # When I send a POST request to `/api/v1/items` with a name, description, and image_url
+    # I receive a 201 JSON  response if the record is successfully created
+    # And I receive a JSON response containing the id, name, description, and image_url but not the created_at or updated_at
+  end
 end
