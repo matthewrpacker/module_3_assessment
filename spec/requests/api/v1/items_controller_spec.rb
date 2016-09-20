@@ -38,4 +38,10 @@ describe "Items" do
     expect(item['created_at']).to eq(nil)
     expect(item['updated_at']).to eq(nil)
   end
+
+  it 'deletes item by id' do
+    delete '/api/v1/items/1'
+
+    expect(response.status).to eq(204)
+  end
 end
